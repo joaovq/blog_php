@@ -34,7 +34,7 @@ $results = $stmt->fetchALL(PDO::FETCH_ASSOC);
             <a class="nav-link" aria-current="page" href="index.php">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#cards">Posts</a>
+            <a class="nav-link" href="#posts">Posts</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">

@@ -23,9 +23,13 @@ echo "<br>";
 <div class="input-group mb-3">
 <input type="date" class="form-control" name="data" id="data" aria-describedby="basic-addon3" placeholder="dd/mm/yyyy" required>
 </div>
-<label for="myTextarea" class="form-label">Texto descritivo</label>
+<label for="description" class="form-label">Descrição</label>
+<div class="input-group mb-3">
+  <input type="text" class="form-control" name="description" id="description" aria-describedby="basic-addon3" placeholder="Digite a descrição" required>
+</div>
+<label for="myTextarea" class="form-label">Texto</label>
 <div class=" mb-3">
-  <textarea id="myTextarea" name="description" aria-label="With textarea" placeholder="Digite a descrição da imagem..."></textarea>
+  <textarea id="myTextarea" name="texto" aria-label="With textarea" placeholder="Digite o texto do post..."></textarea>
 </div>
 <div class="input-group mb-3">
 <input type="file" class="form-control" id="formGroupExampleInput3" name="image" placeholder="Insira uma imagem" name="image"/>

@@ -1,11 +1,12 @@
 <?php 
 
 include_once('../config/conn.php');
-   $stmt = $conection->prepare("INSERT INTO posts (title, description, data, image) VALUES(:TITLE, :DESCRIPTION, :DATA, :IMAGE)");
+   $stmt = $conection->prepare("INSERT INTO posts (title, description, data, image,texto) VALUES(:TITLE, :DESCRIPTION, :DATA, :IMAGE, :TEXTO)");
 
    $title = $_POST['title'];
    $data = $_POST['data'];
    $description = $_POST['description'];
+   $texto = $_POST['texto'];
 
    $arquivo = $_FILES['image'];
 
@@ -18,6 +19,7 @@ include_once('../config/conn.php');
    $stmt->bindParam(":DESCRIPTION", $description);
    $stmt->bindParam(":DATA", $data);
    $stmt->bindParam(":IMAGE", $image);
+   $stmt->bindParam(":TEXTO", $texto);
    $stmt->execute();
 
    /*redireciona o arquivo */
