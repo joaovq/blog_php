@@ -7,6 +7,13 @@ include "header.php";
 
 echo "<br>";
 
+
+$stmt= $conection->prepare("SELECT * FROM category");
+
+$stmt->execute();
+
+$results = $stmt -> fetchAll(PDO::FETCH_ASSOC);
+
 ?>
 
 
@@ -27,6 +34,13 @@ echo "<br>";
 <div class="input-group mb-3">
   <input type="text" class="form-control" name="description" id="description" aria-describedby="basic-addon3" placeholder="Digite a descrição" required>
 </div>
+<label for="category" class="form-label">Categoria</label>
+<select class="form-select mb-3" name="category" id="category" aria-label="Default select example">
+  <option selected>Abra para selecionar a categoria...</option>
+  <?php foreach($results as $category): ?>
+  <option value="<?=$category['id_cat']?>"><?=$category['name_cat']?></option>
+  <?php endforeach; ?>
+</select>
 <label for="myTextarea" class="form-label">Texto</label>
 <div class=" mb-3">
   <textarea id="myTextarea" name="texto" aria-label="With textarea" placeholder="Digite o texto do post..."></textarea>

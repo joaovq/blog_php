@@ -46,6 +46,9 @@
 					<li class="nav-item mb-3">
                         <a href="cad_user.php" class="nav-item"><ion-icon name="add-outline"></ion-icon>Cadastrar Usuário</a>
                     </li>
+                    <li class="nav-item mb-3">
+                        <a href="cat_add.php" class="nav-item"><ion-icon name="duplicate-outline"></ion-icon>Adicionar nova categoria</a>
+                    </li>
                 </ul>
 	        <p><a href="?sair"><ion-icon name="exit-outline"></ion-icon>Deslogar</a></p>
         </nav>

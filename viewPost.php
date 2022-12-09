@@ -28,7 +28,7 @@ $results = $stmt->fetchALL(PDO::FETCH_ASSOC);
 		width: 100%;
 	}
 	p img{
-		max-width: 1000px;
+		max-width: 900px;
 	}
 </style>
 

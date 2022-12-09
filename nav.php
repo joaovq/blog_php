@@ -4,7 +4,13 @@ include "config/conn.php";
 $stmt = $conection->prepare("SELECT * FROM posts ORDER BY id DESC");
 $stmt->execute();
 
+
 $results = $stmt->fetchALL(PDO::FETCH_ASSOC);
+
+$stmt = $conection->prepare("SELECT * FROM category");
+$stmt->execute();
+
+$results1 = $stmt->fetchALL(PDO::FETCH_ASSOC);
 
 ?>
 <!DOCTYPE html>
@@ -41,15 +47,12 @@ $results = $stmt->fetchALL(PDO::FETCH_ASSOC);
               Tópicos importantes
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Beleza</a></li>
+            <?php foreach($results1 as $category): ?>
               <li>
                 <hr class="dropdown-divider">
               </li>
-              <li><a class="dropdown-item" href="#">Cultura</a></li>
-              <li>
-                <hr class="dropdown-divider">
-              </li>
-              <li><a class="dropdown-item" href="#">Tecnologia</a></li>
+              <li><a class="dropdown-item" href="category.php?cat=<?=$category['id_cat']?>"><?=$category['name_cat']?></a></li>
+              <?php endforeach; ?>
             </ul>
           </li>
           <li class="nav-item">
